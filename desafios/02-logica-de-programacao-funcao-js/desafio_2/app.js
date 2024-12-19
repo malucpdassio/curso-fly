@@ -22,3 +22,20 @@ function mediaNumerica(num1, num2, num3){
 
 let resultadoMedia = mediaNumerica(3,9,6);
 console.log(resultadoMedia);
+
+function maiorNumero(num1, num2){
+    if(num1 < num2){
+        console.log(num2);
+    }else{
+        console.log(num1);
+    }
+}
+
+maiorNumero(0,5);
+
+function multiplicacaoDeleMesmo(num){
+    return num * num;
+}
+
+let resultado = multiplicacaoDeleMesmo(4)
+console.log(resultado)
