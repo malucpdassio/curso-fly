@@ -6,16 +6,19 @@ function calculoImc(altura,peso){
 let resultado = calculoImc(1.60,50.5);
 console.log(resultado);
 
-function calculoFatorial(num){
-    if (num == 0 || num == 1){
-        return num == 0;
-    } else {
-        while (num != num){
-            num  = num * (num - 1);
+function calculoFatorial(numero){
+    if (numero === 0 || numero === 1){
+        return 1;
+    } 
 
-        }
+    let fatorial = 1
+    for(let i = 2; i <= numero; i++){
+        fatorial *= i
+
+        //fatorial *= i => i*fatorial
     }
+    return fatorial
 }
 
-let calculo = calculoFatorial(5);
+let calculo = calculoFatorial(6);
 console.log(calculo)
