@@ -21,4 +21,45 @@ function calculoFatorial(numero){
 }
 
 let calculo = calculoFatorial(6);
-console.log(calculo)
+console.log(calculo);
+
+function conversorReais(valor){
+    let real = valor*4.8;
+    return real; 
+}
+
+let conversor = conversorReais(4);
+console.log (conversor);
+
+function areaRetangular(base,altura){
+    let area = base*altura;
+    console.log(`A base é ${base}m e a altura é ${altura}m`);
+    console.log(`A area é igual a ${area}m²`);
+    return area;
+}
+
+let retangulo = areaRetangular(8,3);
+
+function areaCircular(raio){
+    let pi = 3.14;
+    let area = pi*raio**2;
+    console.log(`O Raio do circulo é ${raio}`);
+    console.log (`Área = ${area}m²`)
+    return area
+}
+
+let circulo = areaCircular(3)
+
+function calculoTabuada(numero){
+    let multiplicador = 0;
+    let tabuada
+    while(multiplicador <= 10){
+        
+        tabuada = numero * multiplicador;
+        console.log(`${numero} x ${multiplicador} = ${tabuada}`);
+        
+        multiplicador++;
+    }
+    
+}
+let resultadoTabuada = calculoTabuada(5);
