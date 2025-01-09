@@ -9,6 +9,7 @@
 //paragrafo.innerHTML = 'Escolha um número entre 1 e 10';
 
 // 'let campo = document.querySelector (tag) mais campo.innerHTML = texto' é a forma simplificada das sentenças a cima, pois vai por tudo em uma linha e depois criar uma função para determinar as tags
+let listaDeNumeroSoteados = [];
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
 
@@ -55,9 +56,17 @@ function verificarChute(){
 }
 
 // o return serve para retornar o numero determinado pelo math.random()
-function gerarNumeroAleatorio(){
-    return parseInt(Math.random() * 10 + 1);
+function gerarNumeroAleatorio() {
+    let numeroEscolhido = parseInt(Math.random() * 4 + 1);
+    if(listaDeNumeroSoteados.includes(numeroEscolhido)){
+        return gerarNumeroAleatorio();
+    } else {
+        listaDeNumeroSoteados.push(numeroEscolhido);
+        console.log(listaDeNumeroSoteados)
+        return numeroEscolhido;
+    }
 }
+
 
 //foi criado uma função o qual irá limpar a tela, quando clicarmos em Chutas
 function limparCampo(){
