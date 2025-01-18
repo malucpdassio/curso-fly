@@ -5,7 +5,7 @@ O Mulheres In-Tech: Norte e Nordeste é um curso oferecido pela organização Fl
 
 Dentro desse curso, teremos aulas voltadas a Programação Front-End, com os cursos oferecidos pela Alura, uma das Maiores escolas de Programação Online no brasil, Mercado area Tech, tendo uma visão ampla do mercado de trabalho na area da tecnologia para as mulheres que desejam entrar, e Socioemocional, para aprender a lidar com situações do dia a dia dentro das empresas.
 
-# FINALIZANDO O CURSO 02-LOGICA-DE-PPROGRAMACAO #
+# FINALIZANDO O CURSO 02-LOGICA-DE-PROGRAMACAO #
     
 Curso referente a logica de programação com uso do Javascript e focando nas questões das funções e das Listas. 
     
@@ -14,9 +14,10 @@ Curso referente a logica de programação com uso do Javascript e focando nas qu
 Uma função, nada mais é que um padrão imposto para realização de alguma ação dentro do site. Ou seja, caso eu queira criar um botão de 'Enviar', quando possuir algum formulario, irei criar uma <code>function</code> (função) para enviar aqueles dados informados para algum lugar.
 Dentro dessa função, posso colocar para onde quero enviar, se quando eu abertar enviar, irá aparecer algo para mim, alguma pagina ou algo do tipo.
 
-Foi explicado que, dentro das funções, podemos colocar variaveis, mas elas possuiram nomes diferentes, no qual entraremos no conceito de Variavel **Global** e Variavel *Local*.
+Foi explicado que, dentro das funções, podemos colocar variaveis, mas elas possuiram nomes diferentes, no qual entraremos no conceito de Variavel **Global** e Variavel **Local**.
 
  **Variavel Global**: São aquelas que podem ser encontradas em qualquer parte do code, pois são usaveis no codigo inteiro;
+
  **Variavel Local**: Já as Locais, só podem ser utilizadas em uma parte do Codigo. Ou seja, caso seja criada uma variavel em uma função, ela só poderá ser usada dentro da sua função de criação.
 
 **O que é Array?**
