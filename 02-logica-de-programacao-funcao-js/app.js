@@ -10,13 +10,24 @@
 
 // 'let campo = document.querySelector (tag) mais campo.innerHTML = texto' é a forma simplificada das sentenças a cima, pois vai por tudo em uma linha e depois criar uma função para determinar as tags
 let listaDeNumeroSoteados = [];
+let numeroLimite = 10;
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
 
 function exibirTextoNaTela(tag, texto){
     let campo = document.querySelector (tag);
     campo.innerHTML = texto;
+    if ('speechSynthesis' in window) {
+        let utterance = new SpeechSynthesisUtterance(texto);
+        utterance.lang = 'pt-BR'; 
+        utterance.rate = 1.2; 
+        window.speechSynthesis.speak(utterance); 
+    } else {
+        console.log("Web Speech API não suportada neste navegador.");
+    } 
 }
+
+//Esse responsiveVoice.speak é um elemento usado pora dá voz ao site, seguindo essa estrutura: responsiveVoice.speak(parametro , 'linguagem, sempre em aspas simples', {rate:valocidade});
 
 function mensagemInicial(){
 //forma de se comunicar atraves da função
@@ -57,15 +68,23 @@ function verificarChute(){
 
 // o return serve para retornar o numero determinado pelo math.random()
 function gerarNumeroAleatorio() {
-    let numeroEscolhido = parseInt(Math.random() * 4 + 1);
+    let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
+    let quantidadeDeElemento = listaDeNumeroSoteados.length;
+    
+    if (quantidadeDeElemento == numeroLimite){
+        listaDeNumeroSoteados = [];
+    }  
+
     if(listaDeNumeroSoteados.includes(numeroEscolhido)){
-        return gerarNumeroAleatorio();
+         return gerarNumeroAleatorio(); 
     } else {
         listaDeNumeroSoteados.push(numeroEscolhido);
-        console.log(listaDeNumeroSoteados)
+        console.log(listaDeNumeroSoteados);
         return numeroEscolhido;
     }
 }
+// Essa função vai funcionar do seguinte modo: Gere a função "Gerarnumeroaleatorio()" onde teremos duas variaveis, "numeroEscolhido()" e "quantidadeDeElemento()", o numero escolhido vai ser o numero gerado aleatoriamente, enquanto a quantidade de elemento vai limitar a quantidade de numeros aleatorios gerados. Se a quantidade de elementos foi igual a 5, vou solicitar que a lista volte ao zero; Caso não seja, vou verificar se o numero se encontra na lista, se estiver, vou gerar outro numero, caso não esteja, vou colocar esse numero na lista.
+
 
 
 //foi criado uma função o qual irá limpar a tela, quando clicarmos em Chutas
@@ -75,7 +94,7 @@ function limparCampo(){
 }
 
 function reiniciarJogo(){
-    numeroSecreto == gerarNumeroAleatorio();
+    numeroSecreto = gerarNumeroAleatorio();
     limparCampo();
     tentativas = 1;
     mensagemInicial();
