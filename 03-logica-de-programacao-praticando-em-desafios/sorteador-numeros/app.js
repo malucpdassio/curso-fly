@@ -1,7 +1,5 @@
-let contagemInicial = document.getElementById(de);
-let contagemFinal = document.getElementById(ate);
-let quantidadeDeNumero = document.getElementById(quantidade);
-let numeroSorteado;
+let contagemInicial = document.getElementById(de).value;
+let contagemFinal = document.getElementById(ate).value;
 
 function contagem(){ 
     while (contagemInicial <= contagemFinal){
@@ -14,15 +12,8 @@ function contagem(){
 }
 
 
-function sortear(){
-    
-    while (contagemInicial <= contagemFinal){
-    
-        console.log(contagemInicial);
-        contagemInicial++;
-       
-    }
-
+function sortear(){ 
+    contagem()
 }
 
 
