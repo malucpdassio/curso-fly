@@ -3,18 +3,37 @@ function sortear(){
     let contagemInicial = parseInt(document.getElementById('de').value);
     let contagemFinal = parseInt(document.getElementById('ate').value);
     let numeroSorteado = [];
-
+    let numero
 
     for (i = 0; i < quantidadeSorteada; i++){
-        numeroSorteado.push(sortearNumeroAleatorio(contagemInicial,contagemFinal));
+
+        numero = sorteadorDeNumeroAleatorio(contagemInicial,contagemFinal);
+
+        while(numeroSorteado.includes(numero)){
+            numero = sorteadorDeNumeroAleatorio(contagemInicial,contagemFinal);
+        }
+        
+        numeroSorteado.push(numero);
     }
 
-    console.log(numeroSorteado);
+  
 
+    
+    if(numeroSorteado != 0 ){
+        mensagemDoResultado(`<label class="texto__paragrafo"> Números sorteados: [ ${numeroSorteado} ] </label>`);
+       
+    } else {
+        mensagemDoResultado(`<label class="texto__paragrafo"> ERRO! Reinicie o jogo </label>`);
+    }
 }
 
-function sortearNumeroAleatorio(min,max){
+function sorteadorDeNumeroAleatorio(min,max){
 
     return parseInt(Math.random() * (max - min) + min);
   
+}
+
+function mensagemDoResultado(resultado){
+    let mensagem = document.getElementById('resultado');
+    mensagem.innerHTML = resultado;
 }
