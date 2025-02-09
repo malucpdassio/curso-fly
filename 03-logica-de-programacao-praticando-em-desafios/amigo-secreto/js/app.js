@@ -1,11 +1,7 @@
 //Criar Variaveis de nomes escolhidos e um array
-//adicionar nomes dentro da array
-//sortear aleatoriamente os nomes da array
-//limpar os campos
-
-
 let listaDeNomes = [];
 
+//adicionar nomes dentro da array
 function adicionar(){
     let nomesEnviados = document.getElementById('nome-amigo').value;
     let listaDeAmigo = document.getElementById('lista-amigos');
@@ -18,18 +14,33 @@ function adicionar(){
     }
 
 }
+
+//sortear aleatoriamente os nomes da array
+
 function sortear(){
     let sorteados = document.getElementById('lista-sorteio')
 
     embaralha(listaDeNomes);
     for(let i = 0; i < listaDeNomes.length; i++){
-        sorteados.innerHTML = sorteados.innerHTMLlistaDeNomes[i] + '-->' + listaDeNomes[i + 1] + '<br>'
+
+        if(i == listaDeNomes.length - 1){
+            sorteados.innerHTML = sorteados.innerHTML + listaDeNomes[i] + ' --> ' + listaDeNomes[0] + '<br>';
+        }else{
+            sorteados.innerHTML = sorteados.innerHTML + listaDeNomes[i] + ' --> ' + listaDeNomes[i + 1] + '<br>';
+        }
 
     }
 }
 
+//limpar os campos
 function reiniciar(){
-    
+    let nomesEnviados = document.getElementById('nome-amigo').value;
+    let listaDeAmigo = document.getElementById('lista-amigos');
+    let sorteados = document.getElementById('lista-sorteio');
+
+    listaDeAmigo.textContent = '';
+    sorteados.innerHTML = '';
+    listaDeNomes = [];
 }
 
 //Outras Funções
