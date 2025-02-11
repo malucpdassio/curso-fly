@@ -57,3 +57,6 @@ Podemos acessar esses elementos durante o codigo de diversas formas:
     listaDeCompras.pop //Saida: Arroz, Feijão, Maça
 ```
 
+# FINALIZANDO O CURSO 03-LOGICA-DE-PROGRAMACAO #
+Dentro desse curso, foi possivel realizar 5 projetos que nos desafia a realizar a logica em si dentro de cada projeto.
+Desse modo, foi possivel treinar o nosso pensamento logico com cada um desses projetos, lembrando que é interessante voltar em todos e estudar mais afundo realizando anotações e um paso a paso de como começar a realizar a logica de um projeto (Porem essa é uma questão pessoal de cada um)
